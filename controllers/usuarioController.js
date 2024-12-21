@@ -64,7 +64,6 @@ const crearUsuario = async (req, res) => {
 
     return res.status(201).json({ message: "Usuario creado exitosamente." });
   } catch (error) {
-    console.error("Error al crear el usuario:", error);
     return res
       .status(500)
       .json({ message: "Error al crear el usuario.", error: error.message });
@@ -97,7 +96,6 @@ const actualizarUsuario = async (req, res) => {
       .status(200)
       .json({ message: "Usuario actualizado exitosamente." });
   } catch (error) {
-    console.error("Error al actualizar el usuario:", error);
     return res.status(500).json({
       message: "Error al actualizar el usuario",
       error: error.message,
@@ -132,7 +130,6 @@ const autenticarUsuario = async (req, res) => {
       .status(200)
       .json({ nombre_completo, estados_idestados, correo, token });
   } catch (error) {
-    console.log("Error al autenticar el usuario: ", error);
     return res
       .status(500)
       .json({ msg: "Hubo un error al autenticar el usuario" });
